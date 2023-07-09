@@ -1,7 +1,15 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+    leer();
+});
+
+document.getElementById('registro').addEventListener('submit', (event) => {
+    event.preventDefault();
+});
+
 const leer = () => {
     const xhttp = new XMLHttpRequest();
     
-    xhttp.open('GET', '', true);
+    xhttp.open('GET', 'js/guardados.json', true);
     xhttp.send();
 
     xhttp.onreadystatechange = function(){
@@ -19,7 +27,7 @@ const leer = () => {
                             <td>${contador}</td>
                             <td>${item.tarea}</td>
                             <td>${item.descripcion}</td>
-                            <td>${item.hora_creado}</td>
+                            <td>${item.hora}</td>
 
                             <td>
                                 <button class="btn btn-warning editar" id="editar_${item.id}">
