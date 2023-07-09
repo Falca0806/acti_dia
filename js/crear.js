@@ -11,7 +11,7 @@ const crearActividad = (event) => {
 
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4){
-            let datos = JSON.parse(document.cookie 'tareas=item');
+            let datos = JSON.parse(localStorage.getItem('tareas'));
             let highestId = 0;
 
             for(let i = 0; i < datos.length; i++){
@@ -31,7 +31,7 @@ const crearActividad = (event) => {
                 'descripcion': document.getElementById('descripcion').value,
                 'hora_creado': `${diaSemana[fecha.getDay()]}, ${fecha.getDate()} de ${mesYear[fecha.getMonth()]} de ${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}`});
             
-            sessionStorage.setItem('tareas', JSON.stringify(datos));
+            localStorage.setItem('tareas', JSON.stringify(datos));
 
             document.getElementById('nombre').value = "";
             document.getElementById('descripcion').value = "";
