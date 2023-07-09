@@ -1,11 +1,3 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-    leer();
-});
-
-document.getElementById('registro').addEventListener('submit', (event) => {
-    event.preventDefault();
-});
-
 const leer = () => {
     const xhttp = new XMLHttpRequest();
     
@@ -15,8 +7,8 @@ const leer = () => {
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             console.log(this.responseText);
-            let datos = document.cookie'tareas=item' ? JSON.parse(document.cookie'tareas=item') : JSON.parse(this.responseText);
-            document.cookie=('tareas-item', JSON.stringify(datos));
+            let datos = localStorage.getItem('tareas') ? JSON.parse(localStorage.getItem('tareas')) : JSON.parse(this.responseText);
+            localStorage.setItem('tareas', JSON.stringify(datos));
             let res = document.querySelector('#res');
             res.innerHTML = "";
             let contador = 1;
