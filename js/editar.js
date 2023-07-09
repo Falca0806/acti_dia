@@ -9,7 +9,7 @@ const editarActividad = (event) => {
 
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4){
-            const datos = JSON.parse(sessionStorage.getItem('tareas'));
+            const datos = JSON.parse(document.cookie'tareas=item');
             const cambiar = datos.filter(x => x.id == event.target.id.split('_')[1])[0];
             id_edicion = cambiar.id;
 
@@ -39,7 +39,7 @@ const editarActividad = (event) => {
 };
 
 const edicionConfirmada = (event) => {
-    let datos = JSON.parse(sessionStorage.getItem('tareas'));
+    let datos = JSON.parse(document.cookie 'tareas=item');
     let indice = 0;
     
     for(let i = 0; i < datos.length; i++){
@@ -61,7 +61,7 @@ const edicionConfirmada = (event) => {
     document.getElementById('descripcion').value = "";
     id_edicion = 0;
 
-    sessionStorage.setItem('tareas', JSON.stringify(datos));
+    document.cookie='tareas=item', JSON.stringify(datos));
 
     leer();
 };
