@@ -15,8 +15,8 @@ const leer = () => {
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
             console.log(this.responseText);
-            let datos = sessionStorage.getItem('tareas') ? JSON.parse(sessionStorage.getItem('tareas')) : JSON.parse(this.responseText);
-            sessionStorage.setItem('tareas', JSON.stringify(datos));
+            let datos = document.cookie'tareas=item' ? JSON.parse(document.cookie'tareas=item') : JSON.parse(this.responseText);
+            document.cookie=('tareas-item', JSON.stringify(datos));
             let res = document.querySelector('#res');
             res.innerHTML = "";
             let contador = 1;
