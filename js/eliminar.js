@@ -7,11 +7,11 @@ const eliminarActividad = (event) => {
 
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4){
-            let datos = JSON.parse(document.cookie 'tareas=item');
+            let datos = JSON.parse(localStorage.getItem('tareas'));
 
             datos = datos.filter(x => x.id != event.target.id.split("_")[1]);
             
-            document.cookie='tareas=item', JSON.stringify(datos);
+            localStorage.setItem('tareas', JSON.stringify(datos));
         }
     }
 
