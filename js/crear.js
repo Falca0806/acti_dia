@@ -11,7 +11,7 @@ const crearActividad = (event) => {
 
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4){
-            let datos = JSON.parse(sessionStorage.getItem('tareas'));
+            let datos = JSON.parse(document.cookie 'tareas=item');
             let highestId = 0;
 
             for(let i = 0; i < datos.length; i++){
