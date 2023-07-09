@@ -29,7 +29,7 @@ const crearActividad = (event) => {
 
             datos.push({'id': highestId + 1, 'tarea': document.getElementById('nombre').value,
                 'descripcion': document.getElementById('descripcion').value,
-                'hora_creado': `${diaSemana[fecha.getDay()]}, ${fecha.getDate()} de ${mesYear[fecha.getMonth()]} de ${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}`});
+                'hora': `${diaSemana[fecha.getDay()]}, ${fecha.getDate()} de ${mesYear[fecha.getMonth()]} de ${fecha.getFullYear()}-${fecha.getHours()}:${fecha.getMinutes()}`});
             
             localStorage.setItem('tareas', JSON.stringify(datos));
 
