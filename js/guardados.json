@@ -1,0 +1,14 @@
+[
+   {
+      "id": 1,
+      "tarea":"Prueba 1",
+      "descripcion":"Comenzar frontend de Iglesia",
+      "hora":"Viernes, 7 de Julio de 2023-9:12"
+   },
+   {
+       "id": 2,
+      "tarea":"Prueba 2",
+      "descripcion":"Hacer video de IA",
+      "hora":"Viernes, 7 de Julio de 2023-19:00"
+   }
+]
